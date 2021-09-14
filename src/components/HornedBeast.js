@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 
 
 
+
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
@@ -19,26 +20,43 @@ class HornedBeast extends React.Component {
       numOfClicks: this.state.numOfClicks + 1
     })
   }
+  
+  openModal = () => {
+    this.props.openModal(this.props.slectbeast);
+  };
+
+    
+  
   render() {
     return (
-      <div>
+      <>
 
 
 
         <Col>
 
           <Card style={{ width: '18rem' }}>
-            <Card.Img className='cardCat' variant="top" src={this.props.image_url} alt={this.props.keyword} style={{ height: "250px" }} />
+            <Card.Img className='cardhorned' variant="top" src={this.props.image_url} alt={this.props.keyword} style={{ height: "250px" }} />
             <Card.Body>
-              <Card.Title>{this.props.horns}</Card.Title>
+              <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>
                 Number of Pets {this.state.numOfClicks}
               </Card.Text>
               <Button onClick={this.increaseNumberOfClicks} variant="primary">vote here</Button>
+              <Button onClick={this.openModal} 
+              slectbeast={this.props.slectbeast} 
+              title={this.props.title}
+                image_url={this.props.image_url}
+                alt={this.props.keyword}
+                description={this.props.description}
+                variant="primary">modals</Button>
             </Card.Body>
+            
           </Card>
         </Col>
-      </div>
+
+       
+      </>
 
 
     );

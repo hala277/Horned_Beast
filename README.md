@@ -39,4 +39,4 @@
 
 **Finish time:** *5:00*
 
-**Actual time needed to complete:** *1:30*
+**Actual time needed to complete:** *1:30*  
