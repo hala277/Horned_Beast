@@ -51,7 +51,8 @@ class HornedBeast extends React.Component {
                 image_url={this.props.image_url}
                 alt={this.props.keyword}
                 description={this.props.description}
-                variant="primary">modals</Button>
+                variant="primary">modals
+                </Button>
             </Card.Body>
           </Card>
         </Col>
