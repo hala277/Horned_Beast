@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 class SelectedBeast extends React.Component {
     
@@ -21,9 +21,7 @@ class SelectedBeast extends React.Component {
                         />
                         <p>{this.props.description}</p>
                     </Modal.Body>
-                    <Modal.Footer>
-                        
-                    </Modal.Footer>
+                   
                 </Modal>
             </>
         )
