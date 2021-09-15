@@ -5,20 +5,19 @@ import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 
 
-
 class Main extends React.Component {
-
 
   render() {
     
     return (
 
-
       <div>
        <Card>
        <Row xs={1} md={4} className="g-4">
           {displayImg.map((element, index) => {
-            return (<HornedBeast
+            return (
+            <HornedBeast
+            model={this.props.model}
               selectedBeast={element.displayImg}
                key={index}
                title={element.title} 
@@ -32,11 +31,9 @@ class Main extends React.Component {
         </Row>
        </Card>
       </div>
-
     );
   }
 }
-
 
 
 
