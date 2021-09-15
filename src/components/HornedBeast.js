@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col'
 
 
 
-
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
@@ -14,27 +13,26 @@ class HornedBeast extends React.Component {
       numOfClicks: 0
     }
   }
-
   increaseNumberOfClicks = () => {
     this.setState({
       numOfClicks: this.state.numOfClicks + 1
     })
   }
-  
   openModal = () => {
-    this.props.openModal(this.props.slectbeast);
+    this.props.model(
+      this.props.title,
+      this.props.image_url,
+      this.props.description
+    );
   };
 
-    
-  
+
   render() {
     return (
       <>
 
 
-
         <Col>
-
           <Card style={{ width: '18rem' }}>
             <Card.Img className='cardhorned' variant="top" src={this.props.image_url} alt={this.props.keyword} style={{ height: "250px" }} />
             <Card.Body>
@@ -42,25 +40,25 @@ class HornedBeast extends React.Component {
               <Card.Text>
                 Number of Pets {this.state.numOfClicks}
               </Card.Text>
-              <Button onClick={this.increaseNumberOfClicks} variant="primary">vote here</Button>
-              <Button onClick={this.openModal} 
-              slectbeast={this.props.slectbeast} 
-              title={this.props.title}
+              <Button
+                onClick={this.increaseNumberOfClicks}
+                variant="primary">vote here
+              </Button>{' '}
+              <Button
+                onClick={this.openModal}
+                slectbeast={this.props.slectbeast}
+                title={this.props.title}
                 image_url={this.props.image_url}
                 alt={this.props.keyword}
                 description={this.props.description}
                 variant="primary">modals</Button>
             </Card.Body>
-            
           </Card>
         </Col>
 
-       
       </>
-
 
     );
   }
 }
-
 export default HornedBeast;
