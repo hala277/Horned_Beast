@@ -40,3 +40,17 @@
 **Finish time:** *5:00*
 
 **Actual time needed to complete:** *1:30*  
+
+----------------
+
+## Feature3 :  Display a Modal
+
+**Number and name of feature:** *Display a Modal*
+
+**Estimate of time needed to complete:** *more than 8 hour in a two day*
+
+**Start time:** *1:30*
+
+**Finish time:** *next day 3:20*
+
+**Actual time needed to complete:** *more than 8 hor*  
