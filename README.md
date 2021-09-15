@@ -43,13 +43,27 @@
 
 ----------------
 
-## Feature3 :  Display a Modal
+## Feature4 :  Display a Modal
 
 **Number and name of feature:** *Display a Modal*
 
 **Estimate of time needed to complete:** *more than 8 hour in a two day*
 
 **Start time:** *1:30*
+
+**Finish time:** *next day 3:20*
+
+**Actual time needed to complete:** *more than 8 hor*  
+
+----------------
+
+## Feature5 :  Filter by Numbers of Horns
+
+**Number and name of feature:** *Filter by Numbers of Horns*
+
+**Estimate of time needed to complete:** *3 hour*
+
+**Start time:** *3:40*
 
 **Finish time:** *next day 3:20*
 

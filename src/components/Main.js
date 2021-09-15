@@ -12,6 +12,8 @@ class Main extends React.Component {
     return (
 
       <div>
+
+
        <Card>
        <Row xs={1} md={4} className="g-4">
           {displayImg.map((element, index) => {

@@ -5,6 +5,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import SelectedBeast from './components/SelectedBeast'
 import assest from './components/assest.json'
+import Form from './components/Form'
 
 
 
@@ -18,10 +19,14 @@ class App extends React.Component {
       title: " ",
       image_url: " ",
       description: " ",
+      // horns:"",
     };
    
   }
-   
+  
+  
+
+
   model = (title, image_url, description) =>
     this.setState({
       selectedBeast :this.model,
@@ -29,13 +34,23 @@ class App extends React.Component {
       image_url: image_url,
       description: description,
       isOpen: true,
+
     });
+
+    hornsForm = (horns) =>
+    this.setState({
+      horns : Number(horns)
+
+    });
+    
   openModal = (slectbeast) => this.setState({ isOpen: true, SelectedBeast: assest[slectbeast] });
   closeModal = () => this.setState({ isOpen: false });
   render() {
     return (
       <>
         <Header />
+        {/* hornsForm = {this.props.hornsForm} */}
+        <Form />
         <Main asses={assest} openModal={this.openModal} model = {this.model} />
         <Footer />
         <SelectedBeast
@@ -48,6 +63,7 @@ class App extends React.Component {
           alt={this.state.keyword}
           description={this.state.description}
         />
+       
        
       </>
     );
