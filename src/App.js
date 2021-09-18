@@ -19,7 +19,8 @@ class App extends React.Component {
       title: " ",
       image_url: " ",
       description: " ",
-      // horns:"",
+       horns: assest,
+       Form:0,
     };
    
   }
@@ -39,19 +40,40 @@ class App extends React.Component {
 
     hornsForm = (horns) =>
     this.setState({
-      horns : Number(horns)
-
+      SelectedBeast:this.hornsForm,
+      horns : Number(horns),
+      isOpen: true,
+      horns:horns,
     });
     
+    // check again
+    // hornsFilter = (arr,numberOfHorns ) => {
+      // let formArray =[];
+      // formArray =
+      //  assest.filter(element => element.horns == numberOfHorns)
+      // console.log(formArray)
+
+      // this.setState({
+      //   horns:formArray,
+
+      // })
+    //   if (numberOfHorns === 0){
+    //     return arr;
+    //   }
+    //   else{
+    //     return arr.filter(element => element.horns === numberOfHorns)
+    //   }
+    // }  
+
   openModal = (slectbeast) => this.setState({ isOpen: true, SelectedBeast: assest[slectbeast] });
   closeModal = () => this.setState({ isOpen: false });
   render() {
     return (
       <>
         <Header />
-        {/* hornsForm = {this.props.hornsForm} */}
-        <Form />
-        <Main asses={assest} openModal={this.openModal} model = {this.model} />
+       
+        <Form  hornsFilter = {this.hornsFilter}/>
+        <Main asses={this.state.horns} openModal={this.openModal} model = {this.model} />
         <Footer />
         <SelectedBeast
           isOpen={this.state.isOpen} 
@@ -60,8 +82,8 @@ class App extends React.Component {
           selectedBeast={this.state.selectedBeast}
           title={this.state.title}
           image_url={this.state.image_url}
-          alt={this.state.keyword}
           description={this.state.description}
+          horns = {this.props.horns}
         />
        
        

@@ -19,6 +19,7 @@ class SelectedBeast extends React.Component {
                             alt={this.props.keyword}
                             style={{ height: "250px", width: '16rem' }}
                         />
+                          <h4>{this.props.horns}</h4>
                         <p>{this.props.description}</p>
                     </Modal.Body>
                    

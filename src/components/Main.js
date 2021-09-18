@@ -7,6 +7,17 @@ import Card from 'react-bootstrap/Card'
 
 class Main extends React.Component {
 
+//   hornsFilter = (arr,numberOfHorns ) => {
+//      if (numberOfHorns === 0){
+//     return arr;
+//   }
+//   else{
+//     return arr.filter(element => element.horns === numberOfHorns)
+//   }
+// }  
+
+
+   
   render() {
     
     return (
