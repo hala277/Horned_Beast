@@ -15,7 +15,7 @@ class FormH extends React.Component {
 
   hornsForm = (event) => {
     event.preventDefault();
-    this.props.horn(event.target.hornsname.value);
+    this.props.hornsFilter(event.target.hornsname.value);
     this.setState({
       horns: event.target.hornsname.value,
     });

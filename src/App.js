@@ -47,7 +47,7 @@ class App extends React.Component {
       horns:horns,
     });
     
-    openModal = (slectbeast) => {this.setState({ isOpen: true, SelectedBeast: assest[slectbeast] });}
+    openModal = (slectbeast) => {this.setState({ isOpen: true, selectedBeast: assest[slectbeast] });}
   closeModal = () => this.setState({ isOpen: false });
 
     hornsFilter = (numberOfHorns ) => {
@@ -64,20 +64,22 @@ class App extends React.Component {
 
   
 
-  Form =(horns) => {
-    this.setState({
-      selectedBeast: this.FormHorns,
-      Form :Number(horns),
-      horns:horns,
-      isOpen:true,
-    })
-  }
+  // Form =(horns) => {
+  //   this.setState({
+  //     selectedBeast: this.FormHorns,
+  //     Form :Number(horns),
+  //     horns:horns,
+  //     isOpen:true,
+  //   })
+  // }
   render() {
     return (
       <>
         <Header />
        
         <FormH  hornsFilter = {this.hornsFilter}/>
+        <br></br>
+        <br></br>
         <Main asses={this.state.horns} openModal={this.openModal} model = {this.model} FormHorns ={this.FormHorns}/>
         <Footer />
         <SelectedBeast
