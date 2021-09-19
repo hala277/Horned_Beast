@@ -5,7 +5,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import SelectedBeast from './components/SelectedBeast'
 import assest from './components/assest.json'
-import Form from './components/Form'
+import FormH from './components/FormH'
 
 
 
@@ -20,7 +20,7 @@ class App extends React.Component {
       image_url: " ",
       description: " ",
        horns: assest,
-       Form:0,
+       FormHorns:0,
     };
    
   }
@@ -28,12 +28,13 @@ class App extends React.Component {
   
 
 
-  model = (title, image_url, description) =>
+  model = (title, image_url, description,horns) =>
     this.setState({
       selectedBeast :this.model,
       title: title,
       image_url: image_url,
       description: description,
+      horns: horns,
       isOpen: true,
 
     });
@@ -46,34 +47,38 @@ class App extends React.Component {
       horns:horns,
     });
     
-    // check again
-    // hornsFilter = (arr,numberOfHorns ) => {
-      // let formArray =[];
-      // formArray =
-      //  assest.filter(element => element.horns == numberOfHorns)
-      // console.log(formArray)
-
-      // this.setState({
-      //   horns:formArray,
-
-      // })
-    //   if (numberOfHorns === 0){
-    //     return arr;
-    //   }
-    //   else{
-    //     return arr.filter(element => element.horns === numberOfHorns)
-    //   }
-    // }  
-
-  openModal = (slectbeast) => this.setState({ isOpen: true, SelectedBeast: assest[slectbeast] });
+    openModal = (slectbeast) => {this.setState({ isOpen: true, SelectedBeast: assest[slectbeast] });}
   closeModal = () => this.setState({ isOpen: false });
+
+    hornsFilter = (numberOfHorns ) => {
+      let formArray =[];
+      formArray =assest.filter((value) => value.horns == numberOfHorns);
+     
+
+      this.setState({
+        horns:formArray,
+
+      })
+      
+    }  
+
+  
+
+  Form =(horns) => {
+    this.setState({
+      selectedBeast: this.FormHorns,
+      Form :Number(horns),
+      horns:horns,
+      isOpen:true,
+    })
+  }
   render() {
     return (
       <>
         <Header />
        
-        <Form  hornsFilter = {this.hornsFilter}/>
-        <Main asses={this.state.horns} openModal={this.openModal} model = {this.model} />
+        <FormH  hornsFilter = {this.hornsFilter}/>
+        <Main asses={this.state.horns} openModal={this.openModal} model = {this.model} FormHorns ={this.FormHorns}/>
         <Footer />
         <SelectedBeast
           isOpen={this.state.isOpen} 

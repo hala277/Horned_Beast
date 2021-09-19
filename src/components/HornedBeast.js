@@ -22,7 +22,8 @@ class HornedBeast extends React.Component {
     this.props.model(
       this.props.title,
       this.props.image_url,
-      this.props.description
+      this.props.description,
+      this.props.horns
     );
   };
 
