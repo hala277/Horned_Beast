@@ -22,7 +22,8 @@ class HornedBeast extends React.Component {
     this.props.model(
       this.props.title,
       this.props.image_url,
-      this.props.description
+      this.props.description,
+      this.props.horns
     );
   };
 
@@ -34,9 +35,12 @@ class HornedBeast extends React.Component {
 
         <Col>
           <Card style={{ width: '18rem' }}>
-            <Card.Img className='cardhorned' variant="top" src={this.props.image_url} alt={this.props.keyword} style={{ height: "250px" }} />
+            <Card.Img className='cardhorned' variant="top"  src={this.props.image_url} alt={this.props.keyword} style={{ height: "250px" }} />
             <Card.Body>
-              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Title> {this.props.title}</Card.Title>
+              <Card.Text>
+                {this.props.horns}
+              </Card.Text>
               <Card.Text>
                 Number of Pets {this.state.numOfClicks}
               </Card.Text>
@@ -51,8 +55,9 @@ class HornedBeast extends React.Component {
                 image_url={this.props.image_url}
                 alt={this.props.keyword}
                 description={this.props.description}
+                horns={this.props.horns}
                 variant="primary">modals
-                </Button>
+              </Button>
             </Card.Body>
           </Card>
         </Col>
