@@ -6,30 +6,26 @@ import Button from "react-bootstrap/Button";
 
 
 class FormH extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Form: 0,
-    };
+  
+  
+
+  gethornsForm = (event) => {
+    event.preventDefault();
+    
+     let horns = event.target.value
+     this.props.hornsForm(horns)
+      console.log(horns);
+
+   
   }
 
-  hornsForm = (event) => {
-    event.preventDefault();
-    this.props.hornsFilter(event.target.hornsname.value);
-    this.setState({
-      horns: event.target.hornsname.value,
-    });
-  };
-
-  openForm = () => {
-    this.props.hornsForm(this.props.horns);
-  };
+  
   render() {
     return (
       <>
-        <Form onSubmit={this.hornsForm}>
+        <Form >
           <FloatingLabel label="Works with selects">
-            <Form.Select aria-label="Default select example" name="hornsname">
+            <Form.Select  onChange = {this.gethornsForm} aria-label="Default select example" name="hornsname">
               <option>chose your fav horns</option>
               <option value="1">1</option>
               <option value="2">2</option>

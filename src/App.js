@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import SelectedBeast from './components/SelectedBeast'
-import assest from './components/assest.json'
+import data from './components/assest.json'
 import FormH from './components/FormH'
 
 
@@ -15,11 +15,11 @@ class App extends React.Component {
     this.state = {
       isOpen: false,
      
-      selectedBeast: assest[0],
+      selectedBeast: data[0],
       title: " ",
       image_url: " ",
       description: " ",
-       horns: assest,
+       data: data,
        FormHorns:0,
     };
    
@@ -39,29 +39,23 @@ class App extends React.Component {
 
     });
 
-    hornsForm = (horns) =>
+    hornsForm = (horns) =>{
+    console.log("string from app",horns);
+    let formArray= [];
+    formArray = data.filter((value) => value.horns == horns);
+   
+
     this.setState({
-      SelectedBeast:this.hornsForm,
-      horns : Number(horns),
-      isOpen: true,
-      horns:horns,
-    });
+      data:formArray
+
+    })
     
-    openModal = (slectbeast) => {this.setState({ isOpen: true, selectedBeast: assest[slectbeast] });}
+    };
+    
+    openModal = (slectbeast) => {this.setState({ isOpen: true, selectedBeast: data[slectbeast] });}
   closeModal = () => this.setState({ isOpen: false });
 
-    hornsFilter = (numberOfHorns ) => {
-      let formArray =[];
-      formArray =assest.filter((value) => value.horns == numberOfHorns);
-     
-
-      this.setState({
-        horns:formArray,
-
-      })
-      
-    }  
-
+    
   
 
   // Form =(horns) => {
@@ -77,10 +71,10 @@ class App extends React.Component {
       <>
         <Header />
        
-        <FormH  hornsFilter = {this.hornsFilter}/>
+        <FormH  hornsFilter = {this.hornsFilter} hornsForm = {this.hornsForm}/>
         <br></br>
         <br></br>
-        <Main asses={this.state.horns} openModal={this.openModal} model = {this.model} FormHorns ={this.FormHorns}/>
+        <Main assest={this.state.data} openModal={this.openModal} model = {this.model} FormHorns ={this.FormHorns}/>
         <Footer />
         <SelectedBeast
           isOpen={this.state.isOpen} 

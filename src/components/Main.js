@@ -2,7 +2,7 @@ import React from 'react';
 import HornedBeast from './HornedBeast'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
- import displayImg from './assest.json'
+//  import displayImg from './assest.json'
 
 
 class Main extends React.Component {
@@ -19,19 +19,21 @@ class Main extends React.Component {
 
    
   render() {
-    
+    console.log(this.props.assest)
     return (
 
-      <div>
+      <>
 
 
-       <Card>
-       <Row xs={1} md={4} className="g-4">
-          {displayImg.map((element1, index1) => {
+      <Card>
+        <Row>
+      
+          {this.props.assest.map((element1, index1) => {
+           
             return (
             <HornedBeast
             model={this.props.model}
-            Form = {this.props.Form}
+            Form = {this.props.FormH}
               selectedBeast={element1.displayImg}
                key={index1}
                title={element1.title} 
@@ -42,9 +44,9 @@ class Main extends React.Component {
                 openModal = {this.props.openModal}
                 />);
           })}
-        </Row>
+       </Row>
        </Card>
-      </div>
+      </>
     );
   }
 }
